@@ -20,7 +20,7 @@ public class Dialogue
     {
         Root root = JsonConvert.DeserializeObject<Root>(conversationJSON.text);
         if (root == null || root.messages == null) Debug.LogError("Deserialize Error.");
-        Debug.Log(root.messages.Count);
+        //Debug.Log(root.messages.Count);
         dialogueStructure = root.messages;
     }
 
@@ -63,6 +63,9 @@ public class Dialogue
 
             [JsonProperty("next-id")]
             public int NextId { get; set; }
+            
+            [JsonProperty("ans-id")]
+            public int id { get; set; }
 
             public Answer(string text, int opinion_mod, int next_id)
             {
@@ -79,6 +82,18 @@ public class Dialogue
             this.text = text;
             this.NextId = next_id; 
             this.answers = answers;
+        }
+
+        public Answer SearchAnswer(int answerId)
+        {
+            foreach (Answer answer in answers)
+            {
+                if (answer.id == answerId)
+                {
+                    return answer;
+                }
+            }
+            return null;
         }
     }
 }

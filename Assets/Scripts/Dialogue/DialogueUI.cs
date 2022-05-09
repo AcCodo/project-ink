@@ -16,11 +16,4 @@ public class DialogueUI : MonoBehaviour
         if (this.npcName.text == npcName) return;
         this.npcName.text = npcName;
     }
-
-    public void UpdateFields(string sentence, string npcName, string[] answers)
-    {
-        this.sentence.text = sentence;
-        this.npcName.text = npcName;
-        //Update answers?
-    }
 }
