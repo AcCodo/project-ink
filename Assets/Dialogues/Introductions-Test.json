@@ -1,0 +1,39 @@
+{
+    "messages": [
+        {
+            "id": 0,
+            "NPC": "Dummy",
+            "text": "I'm the dummy Dummy",
+            "next-id": 1
+        },
+        {
+            "id": 1,
+            "NPC": "John",
+            "text": "We know you, Dummy, what's your name, random guy at the corner?",
+            "answers": [
+                {
+                    "text": "My name is Andre",
+                    "opinion-mod": 1,
+                    "next-id": 2
+                },
+                {
+                    "text": "My name is not important..",
+                    "opinion-mod": -2,
+                    "next-id": 300
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "NPC": "John",
+            "text": "Ok, nice to meet you"
+        },
+        {
+            "id": 300,
+            "NPC":"John",
+            "text": "Ok, jerk"
+        }
+    ]
+}
+
+
