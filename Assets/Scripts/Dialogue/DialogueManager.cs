@@ -24,13 +24,19 @@ public class DialogueManager : MonoBehaviour
     {
         Dialogue.Message sentence = dialogueStructure.SearchMessage(id);
         topMessage = sentence;
+        string[] buttonsText = new string[0];
         if (sentence.answers != null)
         {
             //this sentence have answers.
             //TODO: execute sentence with answers here
             //return;
+            buttonsText = new string[sentence.answers.Count];
+            for (int i = 0; i < buttonsText.Length; i++) {
+                buttonsText[i] = sentence.answers[i].text;
+            }
+            
         }
-        
+        FindObjectOfType<DialogueUI>().UpdateButtons(buttonsText);
         FindObjectOfType<DialogueUI>().UpdateFields(sentence.text, sentence.NPC);
     }
 
