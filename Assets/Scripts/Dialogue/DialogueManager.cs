@@ -6,11 +6,12 @@ public class DialogueManager : MonoBehaviour
 {
     private Dialogue dialogueStructure;
     private Dialogue.Message topMessage;
+    private NPCList npcListMB;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        npcListMB = FindObjectOfType<NPCList>();
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -37,7 +38,7 @@ public class DialogueManager : MonoBehaviour
             
         }
         FindObjectOfType<DialogueUI>().UpdateButtons(buttonsText);
-        FindObjectOfType<DialogueUI>().UpdateFields(sentence.text, sentence.NPC);
+        FindObjectOfType<DialogueUI>().UpdateFields(sentence.text, npcListMB.SearchNPC(sentence.NPC).npcName);//sentence.NPC);
     }
 
     public void NextSentence()

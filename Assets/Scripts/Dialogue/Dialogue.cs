@@ -45,7 +45,7 @@ public class Dialogue
     {
         public int id { get; set; }
 
-        public string NPC { get; set; }
+        public int NPC { get; set; }
 
         public string text { get; set; }
 
@@ -67,15 +67,18 @@ public class Dialogue
             [JsonProperty("ans-id")]
             public int id { get; set; }
 
-            public Answer(string text, int opinion_mod, int next_id)
+            public string[] callbacks { get; set; }
+
+            public Answer(string text, int opinion_mod, int next_id, string[] callbacks)
             {
                 this.text = text;
                 this.OpinionMod = opinion_mod;
                 this.NextId = next_id;
+                this.callbacks = callbacks;
             }
         }
 
-        public Message(int id, string npc, string text, int next_id, List<Answer> answers)
+        public Message(int id, int npc, string text, int next_id, List<Answer> answers)
         {
             this.id = id;
             this.NPC = npc;
