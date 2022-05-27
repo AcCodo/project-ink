@@ -1,0 +1,62 @@
+{
+    "messages": [
+        {
+            "id": 0,
+            "NPC": 0,
+            "text": "I'm the dummy Dummy",
+            "next-id": 1
+        },
+        {
+            "id": 1,
+            "NPC": 1,
+            "text": "We know you, Dummy, what's your name, random guy at the corner?",
+            "answers": [
+                {
+                    "ans-id": 0,
+                    "text": "My name is Andre",
+                    "opinion-mod": 1,
+                    "next-id": 2,
+                    "callbacks": [
+                        "NAME:0,1"
+                    ]
+                },
+                {
+                    "ans-id": 1,
+                    "text": "My name is not important..",
+                    "opinion-mod": -2,
+                    "next-id": 300,
+                    "callbacks": [
+                        "OPINION:-2"
+                    ]
+                },
+                {
+                    "ans-id": 2,
+                    "text": "You can call me Deh",
+                    "opinion-mod": 5,
+                    "next-id":102,
+                    "callbacks": [
+                        "NAME:0,1",
+                        "OPINION:1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "NPC": 1,
+            "text": "Ok, nice to meet you"
+        },
+        {
+            "id": 300,
+            "NPC": 1,
+            "text": "Ok, jerk"
+        },
+        {
+            "id": 102,
+            "NPC": 1,
+            "text": "Ok Deh! Call me Johnny then!"
+        }
+    ]
+}
+
+
